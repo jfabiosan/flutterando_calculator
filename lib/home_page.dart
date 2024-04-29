@@ -1,4 +1,4 @@
-import 'package:calculadora_container/buttons_calc.dart';
+import 'package:calculadora_container/keyboard.dart';
 import 'package:calculadora_container/display_calc.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             flex: 4,
-            child: ButtonsCalc(
+            child: Keyboard(
               numberPressed: (String number) {
                 setState(
                   () {

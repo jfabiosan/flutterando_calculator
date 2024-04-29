@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'custom_buttom.dart';
 
-class ButtonsCalc extends StatelessWidget {
-  const ButtonsCalc({
+class Keyboard extends StatelessWidget {
+  const Keyboard({
     super.key,
     required this.numberPressed,
   });
