@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double valueOne = 0;
+  String valueOne = '0';
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             flex: 4,
             child: ButtonsCalc(
-              numberPressed: (double number) {
+              numberPressed: (String number) {
                 setState(
                   () {
                     valueOne = number;

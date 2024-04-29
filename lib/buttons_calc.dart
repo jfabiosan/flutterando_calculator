@@ -8,60 +8,68 @@ class ButtonsCalc extends StatelessWidget {
     required this.numberPressed,
   });
 
-  final ValueSetter<double> numberPressed;
+  final ValueSetter<String> numberPressed;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.only(top: 5, bottom: 5),
+        Padding(
+          padding: const EdgeInsets.only(top: 5, bottom: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomButtom(
                 textButton: 'C',
                 colorButton: Colors.amber,
+                onValueText: numberPressed,
               ),
-              Gap(5),
+              const Gap(5),
               CustomButtom(
                 textButton: '/',
                 colorButton: Colors.amber,
+                onValueText: numberPressed,
               ),
-              Gap(5),
+              const Gap(5),
               CustomButtom(
                 textButton: 'X',
                 colorButton: Colors.amber,
+                onValueText: numberPressed,
               ),
-              Gap(5),
+              const Gap(5),
               CustomButtom(
                 textButton: '+',
                 colorButton: Colors.amber,
+                onValueText: numberPressed,
               ),
             ],
           ),
         ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomButtom(
               textButton: '7',
               colorButton: Colors.grey,
+              onValueText: numberPressed,
             ),
-            Gap(5),
+            const Gap(5),
             CustomButtom(
               textButton: '8',
               colorButton: Colors.grey,
+              onValueText: numberPressed,
             ),
-            Gap(5),
+            const Gap(5),
             CustomButtom(
               textButton: '9',
               colorButton: Colors.grey,
+              onValueText: numberPressed,
             ),
-            Gap(5),
+            const Gap(5),
             CustomButtom(
               textButton: '-',
               colorButton: Colors.amber,
+              onValueText: numberPressed,
             ),
           ],
         ),
@@ -70,80 +78,81 @@ class ButtonsCalc extends StatelessWidget {
           children: [
             Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 5, bottom: 5),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, bottom: 5),
                   child: Row(
                     children: [
                       CustomButtom(
                         textButton: '4',
                         colorButton: Colors.grey,
+                        onValueText: numberPressed,
                       ),
-                      Gap(5),
+                      const Gap(5),
                       CustomButtom(
                         textButton: '5',
                         colorButton: Colors.grey,
+                        onValueText: numberPressed,
                       ),
-                      Gap(5),
+                      const Gap(5),
                       CustomButtom(
                         textButton: '6',
                         colorButton: Colors.grey,
+                        onValueText: numberPressed,
                       ),
-                      Gap(5),
+                      const Gap(5),
                     ],
                   ),
                 ),
                 Row(
                   children: [
-                    InkWell(
-                      onTap: () => numberPressed(1),
-                      child: const CustomButtom(
-                        textButton: '1',
-                        colorButton: Colors.grey,
-                      ),
+                    CustomButtom(
+                      textButton: '1',
+                      colorButton: Colors.grey,
+                      onValueText: numberPressed,
                     ),
                     const Gap(5),
-                    InkWell(
-                      onTap: () {
-                        numberPressed(2);
-                      },
-                      child: const CustomButtom(
-                        textButton: '2',
-                        colorButton: Colors.grey,
-                      ),
+                    CustomButtom(
+                      textButton: '2',
+                      colorButton: Colors.grey,
+                      onValueText: numberPressed,
                     ),
                     const Gap(5),
-                    const CustomButtom(
+                    CustomButtom(
                       textButton: '3',
                       colorButton: Colors.grey,
+                      onValueText: numberPressed,
                     ),
                     const Gap(5),
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 5, bottom: 5),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, bottom: 5),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomButtom(
                         textButton: '.',
                         colorButton: Colors.amber,
+                        onValueText: numberPressed,
                       ),
-                      Gap(5),
+                      const Gap(5),
                       CustomButtom(
                         textButton: '0',
                         colorButton: Colors.grey,
                         width: 105,
+                        onValueText: numberPressed,
                       ),
-                      Gap(5),
+                      const Gap(5),
                     ],
                   ),
                 ),
               ],
             ),
-            const CustomButtom(
+            CustomButtom(
               textButton: '=',
               colorButton: Colors.amber,
               height: 160,
+              onValueText: numberPressed,
             ),
           ],
         ),

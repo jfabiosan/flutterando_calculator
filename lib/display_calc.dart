@@ -6,7 +6,7 @@ class DisplayCalc extends StatefulWidget {
     required this.valueOne,
   });
 
-  final double valueOne;
+  final String valueOne;
 
   @override
   State<DisplayCalc> createState() => _DisplayCalcState();
@@ -26,7 +26,7 @@ class _DisplayCalcState extends State<DisplayCalc> {
         ),
       ),
       child: Text(
-        '${widget.valueOne}',
+        widget.valueOne,
         style: const TextStyle(
           fontSize: 24,
         ),
