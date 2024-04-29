@@ -12,6 +12,7 @@ class Keyboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double space = 5;
     return Column(
       children: [
         Padding(
@@ -24,19 +25,19 @@ class Keyboard extends StatelessWidget {
                 colorButton: Colors.amber,
                 onValueText: numberPressed,
               ),
-              const Gap(5),
+              const Gap(space),
               CustomButtom(
                 textButton: '/',
                 colorButton: Colors.amber,
                 onValueText: numberPressed,
               ),
-              const Gap(5),
+              const Gap(space),
               CustomButtom(
                 textButton: 'X',
                 colorButton: Colors.amber,
                 onValueText: numberPressed,
               ),
-              const Gap(5),
+              const Gap(space),
               CustomButtom(
                 textButton: '+',
                 colorButton: Colors.amber,
@@ -53,19 +54,19 @@ class Keyboard extends StatelessWidget {
               colorButton: Colors.grey,
               onValueText: numberPressed,
             ),
-            const Gap(5),
+            const Gap(space),
             CustomButtom(
               textButton: '8',
               colorButton: Colors.grey,
               onValueText: numberPressed,
             ),
-            const Gap(5),
+            const Gap(space),
             CustomButtom(
               textButton: '9',
               colorButton: Colors.grey,
               onValueText: numberPressed,
             ),
-            const Gap(5),
+            const Gap(space),
             CustomButtom(
               textButton: '-',
               colorButton: Colors.amber,
@@ -87,19 +88,19 @@ class Keyboard extends StatelessWidget {
                         colorButton: Colors.grey,
                         onValueText: numberPressed,
                       ),
-                      const Gap(5),
+                      const Gap(space),
                       CustomButtom(
                         textButton: '5',
                         colorButton: Colors.grey,
                         onValueText: numberPressed,
                       ),
-                      const Gap(5),
+                      const Gap(space),
                       CustomButtom(
                         textButton: '6',
                         colorButton: Colors.grey,
                         onValueText: numberPressed,
                       ),
-                      const Gap(5),
+                      const Gap(space),
                     ],
                   ),
                 ),
@@ -110,19 +111,19 @@ class Keyboard extends StatelessWidget {
                       colorButton: Colors.grey,
                       onValueText: numberPressed,
                     ),
-                    const Gap(5),
+                    const Gap(space),
                     CustomButtom(
                       textButton: '2',
                       colorButton: Colors.grey,
                       onValueText: numberPressed,
                     ),
-                    const Gap(5),
+                    const Gap(space),
                     CustomButtom(
                       textButton: '3',
                       colorButton: Colors.grey,
                       onValueText: numberPressed,
                     ),
-                    const Gap(5),
+                    const Gap(space),
                   ],
                 ),
                 Padding(
@@ -135,14 +136,14 @@ class Keyboard extends StatelessWidget {
                         colorButton: Colors.amber,
                         onValueText: numberPressed,
                       ),
-                      const Gap(5),
+                      const Gap(space),
                       CustomButtom(
                         textButton: '0',
                         colorButton: Colors.grey,
                         width: 105,
                         onValueText: numberPressed,
                       ),
-                      const Gap(5),
+                      const Gap(space),
                     ],
                   ),
                 ),
