@@ -12,150 +12,218 @@ class Keyboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+    final marginSize = size.height * 0.016;
+
+    final buttonWidth = size.width * 0.25;
+    final buttonHeight = size.height * 0.14;
+
     const double space = 5;
+
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 5, bottom: 5),
+          padding: EdgeInsets.only(top: marginSize, bottom: marginSize),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CustomButtom(
-                textButton: 'C',
-                colorButton: Colors.amber,
-                onValueText: numberPressed,
+              const Gap(space),
+              Expanded(
+                child: CustomButtom(
+                  height: buttonHeight,
+                  width: buttonWidth,
+                  textButton: 'C',
+                  colorButton: Colors.amber,
+                  onValueText: numberPressed,
+                ),
               ),
               const Gap(space),
-              CustomButtom(
-                textButton: '/',
-                colorButton: Colors.amber,
-                onValueText: numberPressed,
+              Expanded(
+                child: CustomButtom(
+                  height: buttonHeight,
+                  width: buttonWidth,
+                  textButton: '/',
+                  colorButton: Colors.amber,
+                  onValueText: numberPressed,
+                ),
               ),
               const Gap(space),
-              CustomButtom(
-                textButton: 'X',
-                colorButton: Colors.amber,
-                onValueText: numberPressed,
+              Expanded(
+                child: CustomButtom(
+                  height: buttonHeight,
+                  width: buttonWidth,
+                  textButton: 'X',
+                  colorButton: Colors.amber,
+                  onValueText: numberPressed,
+                ),
               ),
               const Gap(space),
-              CustomButtom(
-                textButton: '+',
-                colorButton: Colors.amber,
-                onValueText: numberPressed,
+              Expanded(
+                child: CustomButtom(
+                  height: buttonHeight,
+                  width: buttonWidth,
+                  textButton: '+',
+                  colorButton: Colors.amber,
+                  onValueText: numberPressed,
+                ),
               ),
+              const Gap(space),
             ],
           ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomButtom(
-              textButton: '7',
-              colorButton: Colors.grey,
-              onValueText: numberPressed,
+            const Gap(space),
+            Expanded(
+              child: CustomButtom(
+                height: buttonHeight,
+                width: buttonWidth,
+                textButton: '7',
+                colorButton: Colors.grey,
+                onValueText: numberPressed,
+              ),
             ),
             const Gap(space),
-            CustomButtom(
-              textButton: '8',
-              colorButton: Colors.grey,
-              onValueText: numberPressed,
+            Expanded(
+              child: CustomButtom(
+                height: buttonHeight,
+                width: buttonWidth,
+                textButton: '8',
+                colorButton: Colors.grey,
+                onValueText: numberPressed,
+              ),
             ),
             const Gap(space),
-            CustomButtom(
-              textButton: '9',
-              colorButton: Colors.grey,
-              onValueText: numberPressed,
+            Expanded(
+              child: CustomButtom(
+                height: buttonHeight,
+                width: buttonWidth,
+                textButton: '9',
+                colorButton: Colors.grey,
+                onValueText: numberPressed,
+              ),
             ),
             const Gap(space),
-            CustomButtom(
-              textButton: '-',
-              colorButton: Colors.amber,
-              onValueText: numberPressed,
+            Expanded(
+              child: CustomButtom(
+                height: buttonHeight,
+                width: buttonWidth,
+                textButton: '-',
+                colorButton: Colors.amber,
+                onValueText: numberPressed,
+              ),
             ),
+            const Gap(space),
           ],
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, bottom: 5),
-                  child: Row(
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: marginSize, bottom: marginSize),
+                    child: Row(
+                      children: [
+                        CustomButtom(
+                          height: buttonHeight,
+                          width: buttonWidth,
+                          textButton: '4',
+                          colorButton: Colors.grey,
+                          onValueText: numberPressed,
+                        ),
+                        const Gap(space),
+                        CustomButtom(
+                          height: buttonHeight,
+                          width: buttonWidth,
+                          textButton: '5',
+                          colorButton: Colors.grey,
+                          onValueText: numberPressed,
+                        ),
+                        const Gap(space),
+                        CustomButtom(
+                          height: buttonHeight,
+                          width: buttonWidth,
+                          textButton: '6',
+                          colorButton: Colors.grey,
+                          onValueText: numberPressed,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
                     children: [
+                      const Gap(space),
                       CustomButtom(
-                        textButton: '4',
+                        height: buttonHeight,
+                        width: buttonWidth,
+                        textButton: '1',
                         colorButton: Colors.grey,
                         onValueText: numberPressed,
                       ),
                       const Gap(space),
                       CustomButtom(
-                        textButton: '5',
+                        height: buttonHeight,
+                        width: buttonWidth,
+                        textButton: '2',
                         colorButton: Colors.grey,
                         onValueText: numberPressed,
                       ),
                       const Gap(space),
                       CustomButtom(
-                        textButton: '6',
+                        height: buttonHeight,
+                        width: buttonWidth,
+                        textButton: '3',
                         colorButton: Colors.grey,
                         onValueText: numberPressed,
                       ),
                       const Gap(space),
                     ],
                   ),
-                ),
-                Row(
-                  children: [
-                    CustomButtom(
-                      textButton: '1',
-                      colorButton: Colors.grey,
-                      onValueText: numberPressed,
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: marginSize, bottom: marginSize),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Gap(space),
+                        CustomButtom(
+                          height: buttonHeight,
+                          width: buttonWidth,
+                          textButton: '.',
+                          colorButton: Colors.amber,
+                          onValueText: numberPressed,
+                        ),
+                        const Gap(space),
+                        CustomButtom(
+                          height: buttonHeight,
+                          width: buttonWidth * 2.08,
+                          textButton: '0',
+                          colorButton: Colors.grey,
+                          // width: buttonWidth * 2,
+                          onValueText: numberPressed,
+                        ),
+                        const Gap(space),
+                      ],
                     ),
-                    const Gap(space),
-                    CustomButtom(
-                      textButton: '2',
-                      colorButton: Colors.grey,
-                      onValueText: numberPressed,
-                    ),
-                    const Gap(space),
-                    CustomButtom(
-                      textButton: '3',
-                      colorButton: Colors.grey,
-                      onValueText: numberPressed,
-                    ),
-                    const Gap(space),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, bottom: 5),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomButtom(
-                        textButton: '.',
-                        colorButton: Colors.amber,
-                        onValueText: numberPressed,
-                      ),
-                      const Gap(space),
-                      CustomButtom(
-                        textButton: '0',
-                        colorButton: Colors.grey,
-                        width: 105,
-                        onValueText: numberPressed,
-                      ),
-                      const Gap(space),
-                    ],
                   ),
+                ],
+              ),
+              Expanded(
+                child: CustomButtom(
+                  height: buttonHeight * 3.2,
+                  width: buttonWidth,
+                  textButton: '=',
+                  colorButton: Colors.amber,
+                  onValueText: numberPressed,
                 ),
-              ],
-            ),
-            CustomButtom(
-              textButton: '=',
-              colorButton: Colors.amber,
-              height: 160,
-              onValueText: numberPressed,
-            ),
-          ],
+              ),
+              const Gap(space),
+            ],
+          ),
         ),
       ],
     );

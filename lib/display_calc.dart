@@ -15,20 +15,16 @@ class DisplayCalc extends StatefulWidget {
 class _DisplayCalcState extends State<DisplayCalc> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.bottomRight,
-      width: MediaQuery.sizeOf(context).width,
-      decoration: BoxDecoration(
-        color: Colors.white60,
-        border: Border.all(
-          color: Colors.black,
-          width: 5,
-        ),
-      ),
-      child: Text(
-        widget.valueOne,
-        style: const TextStyle(
-          fontSize: 24,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        alignment: Alignment.bottomRight,
+        width: MediaQuery.sizeOf(context).width,
+        child: Text(
+          widget.valueOne,
+          style: const TextStyle(
+            fontSize: 24,
+          ),
         ),
       ),
     );
