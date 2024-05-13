@@ -7,8 +7,7 @@ class Keyboard extends StatelessWidget {
     super.key,
     required this.numberPressed,
   });
-
-  final ValueSetter<String> numberPressed;
+  final void Function(String) numberPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -241,13 +240,14 @@ double calcOperation(String operation, double valueOne, double valueTwo) {
       result = valueOne - valueTwo;
       break;
 
-    case '*':
+    case 'X':
       result = valueOne * valueTwo;
       break;
 
     case '/':
       result = valueOne / valueTwo;
       break;
+
     default:
       const AlertDialog(
         actions: [

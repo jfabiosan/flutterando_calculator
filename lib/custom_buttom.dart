@@ -18,11 +18,10 @@ class CustomButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.sizeOf(context);
-    //final heightSize = size.height * 0.14;
-    //final widthSize = size.width * 0.25;
     return InkWell(
-      onTap: () => onValueText(textButton),
+      onTap: () {
+        onValueText(textButton);
+      },
       child: Container(
         alignment: Alignment.center,
         color: colorButton,
