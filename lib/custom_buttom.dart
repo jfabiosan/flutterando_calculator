@@ -23,8 +23,11 @@ class CustomButtom extends StatelessWidget {
         onValueText(textButton);
       },
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6),
+          color: colorButton,
+        ),
         alignment: Alignment.center,
-        color: colorButton,
         height: height,
         width: width,
         child: Text(

@@ -17,12 +17,17 @@ class DisplayCalc extends StatefulWidget {
 class _DisplayCalcState extends State<DisplayCalc> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+    final displayHeight = size.height * 0.10;
+    final displayWidth = size.width;
     return Expanded(
       child: Column(
         children: [
           Container(
+            color: Colors.green.shade50,
             alignment: Alignment.bottomRight,
-            width: MediaQuery.sizeOf(context).width,
+            width: displayWidth,
+            height: displayHeight,
             child: Text(
               widget.valueCurrent,
               style: const TextStyle(
@@ -31,8 +36,10 @@ class _DisplayCalcState extends State<DisplayCalc> {
             ),
           ),
           Container(
+            color: Colors.green.shade50,
             alignment: Alignment.bottomRight,
-            width: MediaQuery.sizeOf(context).width,
+            width: displayWidth,
+            height: displayHeight,
             child: Text(
               widget.valueDisplay,
               style: const TextStyle(
