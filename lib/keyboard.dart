@@ -16,7 +16,7 @@ class Keyboard extends StatelessWidget {
     final buttonWidth = size.width * 0.24;
     final buttonZero = size.width * 0.48;
     final buttonHeight = size.height * 0.155;
-    final buttonEquals = size.height * 0.468;
+    final buttonEqual = size.height * 0.468;
 
     const double space = 1;
 
@@ -195,7 +195,7 @@ class Keyboard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: space),
                 child: CustomButtom(
-                  height: buttonEquals,
+                  height: buttonEqual,
                   textButton: '=',
                   colorButton: Colors.amber,
                   onValueText: numberPressed,
@@ -208,33 +208,4 @@ class Keyboard extends StatelessWidget {
       ],
     );
   }
-}
-
-double calcOperation(String operation, double valueOne, double valueTwo) {
-  double result = 0;
-  switch (operation) {
-    case '+':
-      result = valueOne + valueTwo;
-
-      break;
-    case '-':
-      result = valueOne - valueTwo;
-      break;
-
-    case 'X':
-      result = valueOne * valueTwo;
-      break;
-
-    case '/':
-      result = valueOne / valueTwo;
-      break;
-
-    default:
-      const AlertDialog(
-        actions: [
-          Text('Operação inválida: '),
-        ],
-      );
-  }
-  return result;
 }

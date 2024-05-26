@@ -10,19 +10,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String currentValue = '';
+  String valueDisplay = '';
+  String valueCurrent = '';
   double firstOperand = 0;
   double secondOperand = 0;
   String? selectedOperation;
 
   @override
   Widget build(BuildContext context) {
-    String currentOperation = '';
-
-    if (selectedOperation != null) {
-      currentOperation +=
-          '$firstOperand $selectedOperation $secondOperand = $currentValue';
-    }
     return Material(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,8 +26,8 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             flex: 1,
             child: DisplayCalc(
-              valueCurrent: currentOperation,
-              valueDisplay: currentValue,
+              valueCurrent: valueCurrent,
+              valueDisplay: valueDisplay,
             ),
           ),
           Expanded(
@@ -46,25 +41,27 @@ class _HomePageState extends State<HomePage> {
                         number == 'X' ||
                         number == '/') {
                       // Se um operador for pressionado, armazene o primeiro operando e o tipo de operação
-                      firstOperand = double.parse(currentValue);
+                      firstOperand = double.parse(valueDisplay);
                       selectedOperation = number;
-                      currentValue =
+                      valueDisplay =
                           ''; // Limpe o visor para inserir o segundo operando
                     } else if (number == '=') {
                       // Se "=" for pressionado, calcule o resultado
-                      secondOperand = double.parse(currentValue);
+                      secondOperand = double.parse(valueDisplay);
                       double result = calcOperation(
                           selectedOperation!, firstOperand, secondOperand);
-                      currentValue = result.toStringAsFixed(1);
+                      valueCurrent =
+                          '$firstOperand $selectedOperation $secondOperand = $result';
+                      valueDisplay = result.toString();
                     } else if (number == 'C') {
                       selectedOperation = null;
                       firstOperand = 0;
                       secondOperand = 0;
-                      currentOperation = '0';
-                      currentValue = '';
+                      valueCurrent = '';
+                      valueDisplay = '';
                     } else {
                       // Se um número for pressionado, adicione-o ao valor atual
-                      currentValue += number;
+                      valueDisplay += number;
                     }
                   },
                 );
@@ -75,4 +72,33 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+double calcOperation(String operation, double valueOne, double valueTwo) {
+  double result = 0;
+  switch (operation) {
+    case '+':
+      result = valueOne + valueTwo;
+
+      break;
+    case '-':
+      result = valueOne - valueTwo;
+      break;
+
+    case 'X':
+      result = valueOne * valueTwo;
+      break;
+
+    case '/':
+      result = valueOne / valueTwo;
+      break;
+
+    default:
+      const AlertDialog(
+        actions: [
+          Text('Operação inválida: '),
+        ],
+      );
+  }
+  return result;
 }
