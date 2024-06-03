@@ -31,15 +31,17 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             flex: 4,
-            child: Keyboard(
-              numberPressed: (String number) {
-                setState(
-                  () {
-                    keyPress(number);
-                  },
-                );
-              },
-            ),
+            child: Keyboard(numberPressed: (String number) {
+              setState(
+                () {
+                  keyPress(number);
+                },
+              );
+            }, onEqualPressed: () {
+              setState(() {
+                keyPress('=');
+              });
+            }),
           )
         ],
       ),

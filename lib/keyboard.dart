@@ -7,8 +7,12 @@ class Keyboard extends StatelessWidget {
   const Keyboard({
     super.key,
     required this.numberPressed,
+    //required this.customButtonEqual,
+    required this.onEqualPressed,
   });
   final void Function(String) numberPressed;
+  //final CustomButtonEqual customButtonEqual;
+  final VoidCallback onEqualPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -195,11 +199,12 @@ class Keyboard extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(top: space),
-                child: CustomButtomEqual(
+                child: CustomButtonEqual(
+                  onPressed: onEqualPressed,
                   height: buttonEqual,
-                  textButton: '=',
-                  colorButton: Colors.amber,
-                  onValueText: numberPressed,
+                  //textButton: '=',
+                  //colorButton: Colors.amber,
+                  //onValueText: numberPressed,
                 ),
               ),
             ),
