@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomButtom extends StatelessWidget {
+class CustomButtomEqual extends StatelessWidget {
   final String textButton;
   final Color colorButton;
   final double? height;
   final double? width;
   final void Function(String) onValueText;
 
-  const CustomButtom({
+  const CustomButtomEqual({
     super.key,
     required this.textButton,
     required this.colorButton,
@@ -22,7 +22,7 @@ class CustomButtom extends StatelessWidget {
       onTap: () {
         onValueText(textButton);
       },
-      child: Container(
+      child: AnimatedContainer(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
           color: colorButton,
@@ -30,6 +30,7 @@ class CustomButtom extends StatelessWidget {
         alignment: Alignment.center,
         height: height,
         width: width,
+        duration: const Duration(milliseconds: 200),
         child: Text(
           textButton,
           style: const TextStyle(

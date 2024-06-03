@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class DisplayCalc extends StatefulWidget {
   const DisplayCalc({
     super.key,
-    required this.valueOne,
+    required this.valueDisplay,
+    required this.valueCurrent,
   });
 
-  final String valueOne;
+  final String valueCurrent;
+  final String valueDisplay;
 
   @override
   State<DisplayCalc> createState() => _DisplayCalcState();
@@ -15,22 +17,42 @@ class DisplayCalc extends StatefulWidget {
 class _DisplayCalcState extends State<DisplayCalc> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.bottomRight,
-      width: MediaQuery.sizeOf(context).width,
-      decoration: BoxDecoration(
-        color: Colors.white60,
-        border: Border.all(
-          color: Colors.black,
-          width: 5,
+    final size = MediaQuery.sizeOf(context);
+    final displayHeight = size.height * 0.10;
+    final displayWidth = size.width;
+    return Column(
+      children: [
+        Container(
+          color: Colors.green.shade50,
+          alignment: Alignment.bottomRight,
+          width: displayWidth,
+          height: displayHeight,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: Text(
+              widget.valueCurrent,
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
         ),
-      ),
-      child: Text(
-        widget.valueOne,
-        style: const TextStyle(
-          fontSize: 24,
+        Container(
+          color: Colors.green.shade50,
+          alignment: Alignment.bottomRight,
+          width: displayWidth,
+          height: displayHeight,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: Text(
+              widget.valueDisplay,
+              style: const TextStyle(
+                fontSize: 24,
+              ),
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
