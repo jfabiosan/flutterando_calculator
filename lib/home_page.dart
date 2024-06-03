@@ -48,12 +48,18 @@ class _HomePageState extends State<HomePage> {
 
   void keyPress(String number) {
     if (number == '+' || number == '-' || number == 'X' || number == '/') {
+      if (valueDisplay.isEmpty) {
+        return;
+      }
       // Se um operador for pressionado, armazene o primeiro operando e o tipo de operação
       firstOperand = double.parse(valueDisplay);
       selectedOperation = number;
       valueDisplay = '';
       // Limpe o visor para inserir o segundo operando
     } else if (number == '=') {
+      if (valueDisplay.isEmpty || selectedOperation == null) {
+        return;
+      }
       // Se "=" for pressionado, calcule o resultado
       secondOperand = double.parse(valueDisplay);
       double result =

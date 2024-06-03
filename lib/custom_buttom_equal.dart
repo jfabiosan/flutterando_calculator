@@ -22,7 +22,7 @@ class CustomButtomEqual extends StatelessWidget {
       onTap: () {
         onValueText(textButton);
       },
-      child: Container(
+      child: AnimatedContainer(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
           color: colorButton,
@@ -30,6 +30,7 @@ class CustomButtomEqual extends StatelessWidget {
         alignment: Alignment.center,
         height: height,
         width: width,
+        duration: const Duration(milliseconds: 200),
         child: Text(
           textButton,
           style: const TextStyle(
