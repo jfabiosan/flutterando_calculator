@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'custom_buttom.dart';
+import 'custom_buttom_equal.dart';
 
 class Keyboard extends StatelessWidget {
   const Keyboard({
@@ -194,7 +195,7 @@ class Keyboard extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(top: space),
-                child: CustomButtom(
+                child: CustomButtomEqual(
                   height: buttonEqual,
                   textButton: '=',
                   colorButton: Colors.amber,

@@ -28,10 +28,13 @@ class _DisplayCalcState extends State<DisplayCalc> {
             alignment: Alignment.bottomRight,
             width: displayWidth,
             height: displayHeight,
-            child: Text(
-              widget.valueCurrent,
-              style: const TextStyle(
-                fontSize: 18,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 16),
+              child: Text(
+                widget.valueCurrent,
+                style: const TextStyle(
+                  fontSize: 18,
+                ),
               ),
             ),
           ),
@@ -40,10 +43,13 @@ class _DisplayCalcState extends State<DisplayCalc> {
             alignment: Alignment.bottomRight,
             width: displayWidth,
             height: displayHeight,
-            child: Text(
-              widget.valueDisplay,
-              style: const TextStyle(
-                fontSize: 24,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: Text(
+                widget.valueDisplay,
+                style: const TextStyle(
+                  fontSize: 24,
+                ),
               ),
             ),
           ),
